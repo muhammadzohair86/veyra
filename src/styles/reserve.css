@@ -1,0 +1,92 @@
+.reserve {
+  padding-block: clamp(4.5rem, 10vw, 7.5rem);
+  background: var(--accent);
+  color: #fff;
+}
+
+.reserve__inner {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.eyebrow--on-accent {
+  color: #fff;
+  opacity: 0.9;
+}
+
+.reserve__title {
+  margin-bottom: 1.25rem;
+}
+
+.reserve__body {
+  color: #fff;
+}
+
+.reserve__form {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.reserve__label {
+  font-weight: 600;
+}
+
+.reserve__row {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.reserve__input {
+  min-height: 3.25rem;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+}
+
+.reserve__input::placeholder {
+  color: #6b6158;
+}
+
+.reserve__input[aria-invalid='true'] {
+  border-color: var(--night);
+}
+
+.reserve .btn:focus-visible,
+.reserve__input:focus-visible {
+  outline-color: #fff;
+  outline-offset: 3px;
+}
+
+.reserve__error,
+.reserve__success {
+  min-height: 1.6em;
+  font-weight: 500;
+}
+
+.reserve__error {
+  color: #fff;
+  border-radius: var(--radius-sm);
+}
+
+/* Only draw the error box when there is a message to show. */
+.reserve__error:not(:empty) {
+  background: var(--night);
+  padding: 0.6rem 1rem;
+}
+
+@media (min-width: 48rem) {
+  .reserve__row {
+    grid-template-columns: 1fr auto;
+  }
+}
+
+@media (min-width: 62rem) {
+  .reserve__inner {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 5rem;
+  }
+}

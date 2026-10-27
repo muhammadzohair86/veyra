@@ -1,0 +1,56 @@
+.design__grid {
+  display: grid;
+  gap: 2.25rem 1.5rem;
+}
+
+.detail {
+  display: grid;
+  align-content: start;
+  gap: 0.35rem;
+}
+
+.detail__figure {
+  margin-bottom: 1rem;
+}
+
+.detail__crop {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+
+.detail__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: none;
+  height: auto;
+  transform-origin: 0 0;
+}
+
+.detail__title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.75rem;
+  line-height: 1.15;
+}
+
+.detail__text {
+  color: var(--ink-2);
+}
+
+.design__note {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+@media (min-width: 48rem) {
+  .design__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

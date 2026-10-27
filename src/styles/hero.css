@@ -1,0 +1,148 @@
+.hero {
+  padding-block: clamp(2rem, 6vw, 5rem) clamp(3.5rem, 8vw, 6.5rem);
+}
+
+.hero__grid {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.hero__copy {
+  display: grid;
+  justify-items: start;
+  animation: rise 0.8s var(--ease) both;
+}
+
+.hero__title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(3.25rem, 9.5vw, 6.75rem);
+  line-height: 0.96;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.5rem;
+}
+
+.hero__title em {
+  display: block;
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero__body {
+  margin-bottom: 2rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--ink-2);
+}
+
+.hero__facts li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.hero__facts li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.hero__stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1 / 0.92;
+  animation: rise 0.9s var(--ease) 0.12s both;
+}
+
+.hero__disc {
+  position: absolute;
+  inset: 4% 4% 10%;
+  border-radius: 50%;
+  background: var(--surface-2);
+}
+
+.hero__image {
+  position: relative;
+  z-index: 1;
+  width: 92%;
+  height: auto;
+  filter: drop-shadow(0 28px 24px rgba(22, 18, 15, 0.22));
+  animation: float 7s ease-in-out 1s infinite;
+}
+
+.hero__shadow {
+  position: absolute;
+  bottom: 6%;
+  left: 20%;
+  right: 20%;
+  height: 7%;
+  border-radius: 50%;
+  background: rgba(22, 18, 15, 0.14);
+  filter: blur(14px);
+}
+
+@media (min-width: 56rem) {
+  .hero__grid {
+    grid-template-columns: 1.02fr 1fr;
+  }
+
+  .hero {
+    min-height: calc(100svh - var(--header-h));
+    display: grid;
+    align-items: center;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Keep both calls to action on one row on small laptops. */
+@media (min-width: 56rem) and (max-width: 72rem) {
+  .hero__grid {
+    grid-template-columns: 1.12fr 1fr;
+  }
+
+  .hero__actions {
+    gap: 0.625rem;
+  }
+
+  .hero__actions .btn {
+    padding-inline: 1.2rem;
+    font-size: 0.9375rem;
+  }
+}
